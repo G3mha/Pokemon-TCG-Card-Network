@@ -1,12 +1,12 @@
 # PokemonTCG-Card-Network
 
-Este é um projeto da disciplina de Redes Sociais do curso de Engenharia de Computação do Insper (semestre 2023/2).
+Este é um projeto desenvolvido para a disciplina de Redes Sociais do curso de Engenharia de Computação do Insper (semestre 2023/2).
 
-**Alunos**:
+**Autores**:
 
-- Arthur Barreto
+- [Arthur Barreto](https://github.com/Arthur-Barreto)
 - [Enricco Gemha](https://github.com/G3mha)
-- Felipe Catapano
+- [Felipe Catapano](https://github.com/MekhyW)
 
 ## Glossário
 
@@ -21,7 +21,7 @@ Este é um projeto da disciplina de Redes Sociais do curso de Engenharia de Comp
 
 ## Descrição do Projeto
 
-O projeto tem como objetivo analisar a influência das cartas usadas por jogadores competitivos de Pokémon TCG, verificando o impacto deles no ranking obtido pelos jogadores. Caso queira saber mais sobre o jogo, veja este artigo do [Pokémon Blast News](https://www.poke-blast-news.net/2010/09/o-que-e-tcg.html).
+O projeto tem como objetivo analisar a influência das cartas usadas por jogadores competitivos de Pokémon TCG, verificando o impacto deles no ranking obtido pelos jogadores. Caso queira saber mais sobre o jogo, veja este artigo do [Pokémon Blast News](https://www.poke-blast-news.net/2010/09/o-que-e-tcg.html). Para isso, foi gerada uma rede que relaciona cartas, a partir de uma base de dados com informações delas.
 
 Para criar a base de dados foi realizado o *webscraping* dos dados contidos em [LimitlessTCG](https://limitlesstcg.com/), um site que disponibiliza muitas informações sobre o cenário competitivo do jogo.
 
@@ -65,4 +65,4 @@ Como variáveis de análise temos:
 
 > "Uma maior sinergia entre cartas leva a uma maior chance de ganhar um torneio."
 
-Sinergia é o quanto duas cartas combinam, para serem usadas no mesmo deck. Representamos a sinergia pelo peso da arestas.
+Sinergia é o quanto duas cartas combinam, para serem usadas no mesmo deck. Representamos a sinergia pelo peso das arestas.
