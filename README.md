@@ -56,7 +56,7 @@ Para o conceito de **aresta** foi adotado:
 Como variáveis de análise temos:
 
 - `id_card` : identificador único de cada carta presente em cada deck. Ele segue o formato `<set><número>`;
-- `id_tournament` : identificador único do torneio no qual o deck participou. Ele segue o formato `<ano><mes><dia><nome do torneio>`;
+- `id_tournament` : identificador único do torneio no qual o deck participou. Ele segue o formato `<ano>_<mes>_<dia>_<nome do torneio>`;
 - `id_player` : identificador único do jogador que usou determinado deck. Ele segue o formato utilizado pelo site do LimitlessTCG `<int maior ou igual a 0>`;
 - `tournament_rank` : posição do deck no torneio que disputou. Ele segue o formato `<int maior que 0>`;
 - `tournament_type` : tipo de torneio disputado (ex.: Mundial, Internacional, Nacional, Regional, torneios menores). Ele segue o formato `<string>`, e possui uma característica ordinal, ou seja, é possível ordenar os tipos de torneio de acordo com sua importância;
