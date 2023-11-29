@@ -1,4 +1,4 @@
-# PokemonTCG-Card-Network
+# Pokemon-TCG-Card-Network
 
 ![Pokémon TCG](wallpaper.jpg)
 
