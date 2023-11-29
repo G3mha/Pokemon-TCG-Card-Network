@@ -1,4 +1,4 @@
-# Pokemon-TCG-Card-Network
+# A network-oriented analysis over Pokémon TCG competitive scene
 
 ![Pokémon TCG](wallpaper.jpg)
 
