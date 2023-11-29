@@ -34,11 +34,13 @@ Ignoraremos cartas de energia, já que elas estão presentes em todos os decks, 
 As cartas que possuem mais de uma versão, com mudanças puramente estéticas, foram considerados como iguais. Para efeito de identificador único das cartas, levamos em conta, então, o código de sua versão *vanilla* mais antiga, ou seja, a versão mais comumente encontrada nos pacotes disponíveis para venda, na coleção mais antiga lançada desta carta. Vamos entender melhor como isso ocorre:
 
 *"A carta abaixo possui três versões, cada uma com propriedades idênticas, porém com alterações no desenho, auto-relevo e código da carta (MEW003, MEW182, MEW198). Portanto, quando MEW182 e MEW198 aparecerem em um deck, usaremos o id MEW003 para representá-las."*
+
 ![Carta MEW003](https://limitlesstcg.nyc3.digitaloceanspaces.com/tpci/MEW/MEW_003_R_EN_LG.png)
 ![Carta MEW182](https://limitlesstcg.nyc3.digitaloceanspaces.com/tpci/MEW/MEW_182_R_EN_LG.png)
 ![Carta MEW198](https://limitlesstcg.nyc3.digitaloceanspaces.com/tpci/MEW/MEW_198_R_EN_LG.png)
 
 *"O segundo caso em que isso ocorre é para cartas que foram impressas em mais de uma coleção. No caso abaixo, a carta SVI196 foi lançada em 2023, enquanto DEX102 foi lançada em 2012. Ambas são válidas para uso no formato Padrão do jogo. Portanto, quando a carta SVI196 aparecer, usaremos o id DEX102 para identificá-la."*
+
 ![Carta SVI196](https://limitlesstcg.nyc3.digitaloceanspaces.com/tpci/SVI/SVI_196_R_EN_LG.png)
 ![Carta DEX102](https://limitlesstcg.nyc3.digitaloceanspaces.com/tpci/DEX/DEX_102_R_EN_LG.png)
 
