@@ -1,5 +1,7 @@
 # PokemonTCG-Card-Network
 
+![Pokémon TCG](wallpaper.jpg)
+
 Este é um projeto desenvolvido para a disciplina de Redes Sociais do curso de Engenharia de Computação do Insper (semestre 2023/2).
 
 **Autores**:
