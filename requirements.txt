@@ -1,1 +1,9 @@
 openpyxl
+plotly
+selenium
+seaborn
+numpy
+pandas
+ipykernel
+statsmodels
+networkx

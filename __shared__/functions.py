@@ -2,9 +2,7 @@ import graph_tool_extras as gte
 import graph_tool.draw as draw
 import pandas as pd
 import math
-import numpy as np
 import regression
-import seaborn as sns
 import matplotlib.pyplot as plt
 import statsmodels.api as sm
 import openpyxl
@@ -114,14 +112,16 @@ def main(PATH):
 
     for rot in rotation_list:
         # Create undirected graph
-        g = gte.Graph(directed=False)
+        g = 
         g.add_vp('bipartite')
         g.add_vp('color')
         unique_cards = []
+
         # Add vertices and edges to graph
         for combo_id, card_id in combo_card_list[rot]:
             if card_id not in unique_cards:
                 unique_cards.append(card_id)
+            g.add_node(combo_id, bipartite=1, color=0xffffff)
             get_or_add_vertex(g, combo_id, bipartite=1)
             get_or_add_vertex(g, card_id, bipartite=0)
             get_or_add_edge(g, combo_id, card_id)
