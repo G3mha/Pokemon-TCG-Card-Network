@@ -1,72 +1,74 @@
-# A network-oriented analysis over Pokémon TCG competitive scene
+# A Network-oriented Analysis of the Pokémon TCG Competitive Scene
 
 ![Pokémon TCG](wallpaper.jpg)
 
-Este é um projeto desenvolvido para a disciplina de Redes Sociais do curso de Engenharia de Computação do Insper (semestre 2023/2).
+This project was developed for the Social Networks course in the Computer Engineering program at Insper (2023/2 semester).
 
-**Autores**:
+**Authors**:
 
 - [Arthur Barreto](https://github.com/Arthur-Barreto)
 - [Enricco Gemha](https://github.com/G3mha)
 - [Felipe Catapano](https://github.com/MekhyW)
 
-## Glossário
+🇧🇷 Version in Portuguese: [click here](./README-pt_BR.md)
 
-- *Deck* = baralho;
-- *Set* = coleção;
-- Pokémon® TCG = Pokémon Trading Card Game®;
-- *Vanilla* = padrão/básica;
-- Tipos de carta = Pokémon, Treinador, Energia;
-- Formato Padrão = formato de jogo oficial, que permite o uso de cartas lançadas a partir de determinada coleção. Ele é atualizado anualmente, e as cartas mais antigas são removidas do formato;
-- Versões de cartas = cartas que possuem mudanças puramente estéticas, mas que possuem as mesmas propriedades. Por exemplo, algumas cartas que possuem uma versão *vanilla* e uma versão *full art*;
-- Código da carta = identificador único do modelo da carta em determinada coleção. Pode ser encontrada no canto inferior esquerdo da carta.
+## Glossary
 
-## Descrição do Projeto
+- Deck = collection of cards used for play
+- Set = collection of cards released together
+- Pokémon® TCG = Pokémon Trading Card Game®
+- Vanilla = standard/basic version
+- Card Types = Pokémon, Trainer, Energy
+- Standard Format = official game format that allows the use of cards released from a specific collection onward. It is updated annually, and older cards are removed from the format
+- Card Versions = cards that have purely aesthetic changes but possess the same properties. For example, some cards have a vanilla version and a full art version
+- Card Code = unique identifier for the card model in a specific collection. Can be found in the lower left corner of the card
 
-O projeto tem como objetivo analisar a influência das cartas usadas por jogadores competitivos de Pokémon TCG, verificando o impacto deles no ranking obtido pelos jogadores. Caso queira saber mais sobre o jogo, veja este artigo do [Pokémon Blast News](https://www.poke-blast-news.net/2010/09/o-que-e-tcg.html). Para isso, foi gerada uma rede que relaciona cartas, a partir de uma base de dados com informações delas.
+## Project Description
 
-Para criar a base de dados foi realizado o *webscraping* dos dados contidos em [LimitlessTCG](https://limitlesstcg.com/), um site que disponibiliza muitas informações sobre o cenário competitivo do jogo.
+The project aims to analyze the influence of cards used by competitive Pokémon TCG players, examining their impact on players' rankings. If you want to learn more about the game, see this article from [Pokémon Blast News](https://www.jacobmarciniec.com/blog/pokemon-cards-explained-for-absolute-beginners). For this purpose, we generated a network that relates cards based on a database containing their information.
 
-Ressaltamos que os dados extraídos são referentes a todos os campeonatos oficiais disputados entre 2011 e 2023.
+To create the database, we performed web scraping of data from [LimitlessTCG](https://limitlesstcg.com/), a site that provides extensive information about the game's competitive scene.
 
-Ignoraremos cartas de energia, já que elas estão presentes em todos os decks, e portanto não necessariamente impactam o desempenho de um deck, mas sim complementam a estratégia dele. Nenhum deck é pensado com foco na carta de energia, mas sim pela carta de Pokémon ou Treinador, que demandará uma determinada energia para ser usada.
+We emphasize that the extracted data refers to all official championships held between 2011 and 2023.
 
-As cartas que possuem mais de uma versão, com mudanças puramente estéticas, foram considerados como iguais. Para efeito de identificador único das cartas, levamos em conta, então, o código de sua versão *vanilla* mais antiga, ou seja, a versão mais comumente encontrada nos pacotes disponíveis para venda, na coleção mais antiga lançada desta carta. Vamos entender melhor como isso ocorre:
+We will ignore energy cards since they are present in all decks and therefore don't necessarily impact a deck's performance, but rather complement its strategy. No deck is designed with a focus on energy cards, but rather on Pokémon or Trainer cards, which will require specific energy to be used.
 
-*"A carta abaixo possui três versões, cada uma com propriedades idênticas, porém com alterações no desenho, auto-relevo e código da carta (MEW003, MEW182, MEW198). Portanto, quando MEW182 e MEW198 aparecerem em um deck, usaremos o id MEW003 para representá-las."*
+Cards that have multiple versions with purely aesthetic changes were considered identical. For the purpose of unique card identification, we considered the code of their oldest vanilla version, meaning the version most commonly found in packs available for sale in the earliest collection that released this card. Let's better understand how this works:
 
-![Carta MEW003](https://limitlesstcg.nyc3.digitaloceanspaces.com/tpci/MEW/MEW_003_R_EN_LG.png)
-![Carta MEW182](https://limitlesstcg.nyc3.digitaloceanspaces.com/tpci/MEW/MEW_182_R_EN_LG.png)
-![Carta MEW198](https://limitlesstcg.nyc3.digitaloceanspaces.com/tpci/MEW/MEW_198_R_EN_LG.png)
+*"The card below has three versions, each with identical properties but with changes in artwork, embossing, and card code (MEW003, MEW182, MEW198). Therefore, when MEW182 and MEW198 appear in a deck, we will use the id MEW003 to represent them."*
 
-*"O segundo caso em que isso ocorre é para cartas que foram impressas em mais de uma coleção. No caso abaixo, a carta SVI196 foi lançada em 2023, enquanto DEX102 foi lançada em 2012. Ambas são válidas para uso no formato Padrão do jogo. Portanto, quando a carta SVI196 aparecer, usaremos o id DEX102 para identificá-la."*
+![Card MEW003](https://limitlesstcg.nyc3.digitaloceanspaces.com/tpci/MEW/MEW_003_R_EN_LG.png)
+![Card MEW182](https://limitlesstcg.nyc3.digitaloceanspaces.com/tpci/MEW/MEW_182_R_EN_LG.png)
+![Card MEW198](https://limitlesstcg.nyc3.digitaloceanspaces.com/tpci/MEW/MEW_198_R_EN_LG.png)
 
-![Carta SVI196](https://limitlesstcg.nyc3.digitaloceanspaces.com/tpci/SVI/SVI_196_R_EN_LG.png)
-![Carta DEX102](https://limitlesstcg.nyc3.digitaloceanspaces.com/tpci/DEX/DEX_102_R_EN_LG.png)
+*"The second case where this occurs is for cards that were printed in more than one collection. In the case below, card SVI196 was released in 2023, while DEX102 was released in 2012. Both are valid for use in the Standard format of the game. Therefore, when card SVI196 appears, we will use the id DEX102 to identify it."*
 
-### Conceito de aresta e vértices
+![Card SVI196](https://limitlesstcg.nyc3.digitaloceanspaces.com/tpci/SVI/SVI_196_R_EN_LG.png)
+![Card DEX102](https://limitlesstcg.nyc3.digitaloceanspaces.com/tpci/DEX/DEX_102_R_EN_LG.png)
 
-Para o conceito de **vértices** foi adotado que:
+### Concept of Edges and Vertices
 
-- Cada carta é um vértice, sem distinção entre cartas iguais de raridade diferente, ou cartas que tiveram reimpressão.
+For the concept of **vertices**, we adopted that:
 
-Para o conceito de **aresta** foi adotado:
+- Each card is a vertex, without distinction between identical cards of different rarity, or cards that were reprinted.
 
-- Duas cartas possuem um relacionamento (aresta) se estão presentes no mesmo deck.
-- O peso da aresta entre duas cartas é o número de decks em que ambas estão listadas.
+For the concept of **edges**, we adopted that:
 
-### Variáveis
+- Two cards have a relationship (edge) if they are present in the same deck.
+- The weight of the edge between two cards is the number of decks in which both are listed.
 
-Como variáveis de análise temos:
+### Variables
 
-- `id_card` : identificador único de cada carta presente em cada deck. Ele segue o formato `<set><número>`;
-- `id_tournament` : identificador único do torneio no qual o deck participou. Ele segue o formato `<ano>_<mes>_<dia>_<nome do torneio>`;
-- `id_player` : identificador único do jogador que usou determinado deck. Ele segue o formato utilizado pelo site do LimitlessTCG `<int maior ou igual a 0>`;
-- `tournament_rank` : posição do deck no torneio que disputou. Ele segue o formato `<int maior que 0>`;
-- `tournament_type` : tipo de torneio disputado (ex.: Mundial, Internacional, Nacional, Regional, torneios menores). Ele segue o formato `<string>`, e possui uma característica ordinal, ou seja, é possível ordenar os tipos de torneio de acordo com sua importância;
+As analysis variables we have:
 
-### Hipótese
+- `id_card`: unique identifier for each card present in each deck. It follows the format `<set><number>`
+- `id_tournament`: unique identifier for the tournament in which the deck participated. It follows the format `<year>_<month>_<day>_<tournament name>`
+- `id_player`: unique identifier for the player who used a specific deck. It follows the format used by the LimitlessTCG site `<int greater than or equal to 0>`
+- `tournament_rank`: position of the deck in the tournament it competed in. It follows the format `<int greater than 0>`
+- `tournament_type`: type of tournament competed in (e.g., World, International, National, Regional, smaller tournaments). It follows the format `<string>`, and has an ordinal characteristic, meaning it's possible to order tournament types according to their importance
 
-> "Uma maior sinergia entre cartas leva a uma maior chance de ganhar um torneio."
+### Hypothesis
 
-Sinergia é o quanto duas cartas combinam, para serem usadas no mesmo deck. Representamos a sinergia pelo peso das arestas.
+> "Greater synergy between cards leads to a higher chance of winning a tournament."
+
+Synergy is how well two cards combine to be used in the same deck. We represent synergy by the weight of the edges.
