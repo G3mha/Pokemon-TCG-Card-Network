@@ -1,5 +1,7 @@
 # A Network-oriented Analysis of the Pokémon TCG Competitive Scene
 
+🇧🇷 Version in Portuguese: [click here](./README-pt_BR.md)
+
 ![Pokémon TCG](wallpaper.jpg)
 
 This project was developed for the Social Networks course in the Computer Engineering program at Insper (2023/2 semester).
@@ -9,8 +11,6 @@ This project was developed for the Social Networks course in the Computer Engine
 - [Arthur Barreto](https://github.com/Arthur-Barreto)
 - [Enricco Gemha](https://github.com/G3mha)
 - [Felipe Catapano](https://github.com/MekhyW)
-
-🇧🇷 Version in Portuguese: [click here](./README-pt_BR.md)
 
 ## Glossary
 
