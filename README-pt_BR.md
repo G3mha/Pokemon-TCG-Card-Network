@@ -1,4 +1,4 @@
-# A network-oriented analysis over Pokémon TCG competitive scene
+# Uma análise através de redes (de grafos) sobre o cenário competitivo de Pokémon TCG
 
 🇺🇸 Versão em Inglês: [clique aqui](./README.md)
 
