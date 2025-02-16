@@ -1,5 +1,7 @@
 # A network-oriented analysis over Pokémon TCG competitive scene
 
+🇺🇸 Versão em Inglês: [clique aqui](./README.md)
+
 ![Pokémon TCG](wallpaper.jpg)
 
 Este é um projeto desenvolvido para a disciplina de Redes Sociais do curso de Engenharia de Computação do Insper (semestre 2023/2).
@@ -9,8 +11,6 @@ Este é um projeto desenvolvido para a disciplina de Redes Sociais do curso de E
 - [Arthur Barreto](https://github.com/Arthur-Barreto)
 - [Enricco Gemha](https://github.com/G3mha)
 - [Felipe Catapano](https://github.com/MekhyW)
-
-🇺🇸 Versão em Inglês: [clique aqui](./README.md)
 
 ## Glossário
 
